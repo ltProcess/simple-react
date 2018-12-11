@@ -10,11 +10,24 @@
 </body>
 <script src="./React.js"></script>
 <script>
-  const helloWorld = React.createElement('div', null, `Hello World`)
+  const helloWorld = React.createElement('div', null, `Hello World - v1.0`)
   ReactDOM.render(helloWorld, document.getElementById('root'))
 
-  const HI = () => React.createElement('div', null, `HI function component`)
+  const HI = () => React.createElement('div', null, `HI function component - v2.0`)
   const hiWorld = React.createElement(HI, null, null)
   ReactDOM.render(hiWorld, document.getElementById('root'))
+
+  const testComponent =  () => React.createElement('div', null, `HI function component - v3.0`)
+  const hi1 = React.createElement(testComponent, null, null)
+  const hi2 = React.createElement(testComponent, null, null)
+  const divEle = React.createElement('div', null, 'wrapped div')
+
+  const parent = React.createElement('div', null,
+    hi1,
+    hi2,
+    divEle,
+    `文本内容`,
+  )
+  ReactDOM.render(parent, document.getElementById('root'))
 </script>
 </html>
