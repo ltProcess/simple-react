@@ -11,7 +11,10 @@
 <script src="./React.js"></script>
 <script>
   const helloWorld = React.createElement('div', null, `Hello World`)
-  console.log(helloWorld)
   ReactDOM.render(helloWorld, document.getElementById('root'))
+
+  const HI = () => React.createElement('div', null, `HI function component`)
+  const hiWorld = React.createElement(HI, null, null)
+  ReactDOM.render(hiWorld, document.getElementById('root'))
 </script>
 </html>
