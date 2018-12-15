@@ -32,10 +32,14 @@
 
   class Hello {
     render() {
-      return React.createElement('div', null, `class component`)
+      return React.createElement('div', null, `class component - v4.0`)
     }
   }
   const helloWorld2 = React.createElement(Hello, null, null)
   ReactDOM.render(helloWorld2, document.getElementById('root'))
+
+  const hiComponent = ({ name }) =>  React.createElement('div', null, `HI ${name} function component - v5.0`)
+  const hi4 = React.createElement(hiComponent, { name: 'para component'}, null)
+  ReactDOM.render(hi4, document.getElementById('root'))
 </script>
 </html>

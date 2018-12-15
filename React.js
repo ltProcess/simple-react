@@ -2,8 +2,8 @@ function createElement(parentEle, props, ...childEles) {
   if (typeof parentEle === 'function' && /^\s*class\s+/.test(parentEle.toString())) {
     let componet = new parentEle()
     return componet.render()
-  } else if(typeof parentEle === 'function') {
-    return parentEle()
+  } else if(typeof parentEle === 'function' ) {
+    return parentEle(props)
   } else {
     let parentElement = document.createElement(parentEle)
     childEles.forEach(child => {
