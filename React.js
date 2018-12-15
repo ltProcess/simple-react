@@ -1,4 +1,8 @@
 function createElement(parentEle, props, ...childEles) {
+  if (typeof parentEle === 'function' && /^\s*class\s+/.test(parentEle.toString())) {
+    let componet = new parentEle()
+    return componet.render()
+  }
   if(typeof parentEle === 'function') {
     return parentEle()
   } else {

@@ -29,5 +29,13 @@
     `文本内容`,
   )
   ReactDOM.render(parent, document.getElementById('root'))
+
+  class Hello {
+    render() {
+      return React.createElement('div', null, `class component`)
+    }
+  }
+  const helloWorld2 = React.createElement(Hello, null, null)
+  ReactDOM.render(helloWorld2, document.getElementById('root'))
 </script>
 </html>
