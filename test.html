@@ -41,5 +41,16 @@
   const hiComponent = ({ name }) =>  React.createElement('div', null, `HI ${name} function component - v5.0`)
   const hi4 = React.createElement(hiComponent, { name: 'para component'}, null)
   ReactDOM.render(hi4, document.getElementById('root'))
+
+  class Hello1 extends React.Component {
+    constructor(props) {
+      super(props)
+    }
+    render () {
+      return React.createElement('div', null, `Hello ${this.props.name}`)
+    }
+  }
+  const helloWorld3 = React.createElement(Hello1, { name: 'test' }, null)
+  ReactDOM.render(helloWorld3, document.getElementById('root'))
 </script>
 </html>

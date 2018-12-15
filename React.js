@@ -1,6 +1,12 @@
+class Component {
+  constructor(props) {
+    this.props = props
+  }
+}
+
 function createElement(parentEle, props, ...childEles) {
   if (typeof parentEle === 'function' && /^\s*class\s+/.test(parentEle.toString())) {
-    let componet = new parentEle()
+    let componet = new parentEle(props)
     return componet.render()
   } else if(typeof parentEle === 'function' ) {
     return parentEle(props)
@@ -23,7 +29,8 @@ function render(insertEle, rootEle) {
 }
 
 React = {
-  createElement
+  createElement,
+  Component
 }
 
 ReactDOM = {
