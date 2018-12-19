@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>xiaomi</title>
+	<title>FE</title>
 </head>
 <body>
 	<h3>simple react test</h3>
@@ -52,5 +52,17 @@
   }
   const helloWorld3 = React.createElement(Hello1, { name: 'test' }, null)
   ReactDOM.render(helloWorld3, document.getElementById('root'))
+
+  class TestButton extends React.Component {
+    constructor(props) {
+      super(props)
+    }
+    
+    render() {
+      return React.createElement('button', { onClick: this.props.onClick }, `Click me`)
+    }
+  }
+  const testBtn = React.createElement(TestButton, { onClick: () => alert('click attach')}, null)
+  ReactDOM,render(testBtn, document.getElementById('root'))
 </script>
 </html>

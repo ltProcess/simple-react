@@ -12,6 +12,17 @@ function createElement(parentEle, props, ...childEles) {
     return parentEle(props)
   } else {
     let parentElement = document.createElement(parentEle)
+    if (props !== null) {
+      Object.keys(props).forEach(key => {
+        switch(key) {
+          case 'onClick':
+            parentElement.addEventListener('click', props[key])
+            break
+          default:
+            break
+        }
+      })
+    }
     childEles.forEach(child => {
       if(typeof child === 'string') {
         parentElement.innerHTML += child

@@ -5,4 +5,5 @@
 * wrap child component
 * support class component
 * functional component parameter
-*  class component props
+* class component props
+* addevent listener
