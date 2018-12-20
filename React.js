@@ -1,13 +1,19 @@
+let rootElement
+let rootReactElement
 class Component {
   constructor(props) {
     this.props = props
+  }
+  setState(state) {
+    this.state = state
+    reRender()
   }
 }
 
 function createElement(parentEle, props, ...childEles) {
   if (typeof parentEle === 'function' && /^\s*class\s+/.test(parentEle.toString())) {
     let componet = new parentEle(props)
-    return componet.render()
+    return componet
   } else if(typeof parentEle === 'function' ) {
     return parentEle(props)
   } else {
@@ -36,9 +42,20 @@ function createElement(parentEle, props, ...childEles) {
 }
 
 function render(insertEle, rootEle) {
-  rootEle.appendChild(insertEle)
+  rootElement = rootEle
+  rootReactElement = insertEle
+  if (typeof insertEle.render === 'function') {
+    rootEle.appendChild(insertEle.render())
+  } else {
+    rootEle.appendChild(insertEle)
+  }
 }
-
+function reRender() {
+  while(rootElement.hasChildNodes()) {
+    rootElement.removeChild(rootElement.lastChild)
+  }
+  ReactDOM.render(rootReactElement, rootElement)
+}
 React = {
   createElement,
   Component

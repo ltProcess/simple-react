@@ -7,3 +7,4 @@
 * functional component parameter
 * class component props
 * addevent listener
+* dynamic rendering
