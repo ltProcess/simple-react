@@ -8,3 +8,4 @@
 * class component props
 * addevent listener
 * dynamic rendering
+* prevent variable pollution
