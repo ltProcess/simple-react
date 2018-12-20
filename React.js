@@ -12,11 +12,14 @@
   }
 
   function createElement(parentEle, props, ...childEles) {
+    // 类组件
     if (typeof parentEle === 'function' && /^\s*class\s+/.test(parentEle.toString())) {
       let componet = new parentEle(props)
       return componet
+      // 函数组件
     } else if(typeof parentEle === 'function' ) {
       return parentEle(props)
+      // html标签组件
     } else {
       let parentElement = document.createElement(parentEle)
       if (props !== null) {
