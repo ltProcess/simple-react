@@ -9,3 +9,4 @@
 * addevent listener
 * dynamic rendering
 * prevent variable pollution
+* render array list component

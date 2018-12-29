@@ -88,5 +88,11 @@
   }
   let myCounter = React.createElement(Counter,null,null)
   ReactDOM.render(myCounter, document.getElementById('root'))
+
+  const ReactListEle = React.createElement('div', null, [
+    React.createElement('span', null, 'it is nice...'),
+    React.createElement('span', null, 'it is nice too'),
+  ])
+  ReactDOM.render(ReactListEle, document.getElementById('root'))
 </script>
 </html>

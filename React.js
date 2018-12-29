@@ -36,7 +36,10 @@
       childEles.forEach(child => {
         if(typeof child === 'string') {
           parentElement.innerHTML += child
-        } else if (typeof child === 'object') {
+        } else if (Array.isArray(child)) {
+          child.forEach(eleItem => parentElement.appendChild(eleItem))
+        }
+         else if (typeof child === 'object') {
           parentElement.appendChild(child)
         }
       })
