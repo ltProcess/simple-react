@@ -94,5 +94,8 @@
     React.createElement('span', null, 'it is nice too'),
   ])
   ReactDOM.render(ReactListEle, document.getElementById('root'))
+
+  const ReactFocusEle = React.createElement('input', { onFocus: function() { console.log('i am focused')}})
+  ReactDOM.render(ReactFocusEle, document.getElementById('root'))
 </script>
 </html>

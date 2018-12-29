@@ -23,13 +23,11 @@
     } else {
       let parentElement = document.createElement(parentEle)
       if (props !== null) {
+        let eventName
         Object.keys(props).forEach(key => {
-          switch(key) {
-            case 'onClick':
-              parentElement.addEventListener('click', props[key])
-              break
-            default:
-              break
+          if(/^on.*$/.test(key)) {
+            eventName = key.slice(2).toLowerCase()
+            parentElement.addEventListener(eventName, props[key])
           }
         })
       }
